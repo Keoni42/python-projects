@@ -1,0 +1,46 @@
+#defining all the different types of math
+
+def add(x, y):
+    return x + y 
+
+def multiply(x, y):
+    return x * y
+
+def subtract(x, y):
+    return x - y
+
+def division(x, y):
+    return x / y
+
+print("Select Operation: \n 1.Addition \n 2.Multiplication \n 3.Subtraction \n 4.Division")
+
+#changing input from str to float
+while True:
+    choice = input("Enter Selection: 1, 2, 3, 4: ")
+    
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number:"))
+            num2 = float(input("Enter second number:"))
+        except ValueError:
+            print("Invalid input, please enter proper number.")
+            continue
+
+        if choice == '1':
+            print(num1, '+', num2, '=', add(num1, num2))
+
+        elif choice == '2':
+            print(num1, '*', num2,'=', multiply(num1, num2))
+
+        elif choice == '3':
+            print(num1, '-', num2, '=', subtract(num1, num2))
+
+        elif choice == '4':
+            print(num1, '/', num2, '=', division(num1, num2))
+#making loop cycle for users
+
+        repeat = input("Would you like to go again? Yes/No: ")
+        if repeat == 'No':
+            break
+        else:
+            print("Ready for next equation.")
